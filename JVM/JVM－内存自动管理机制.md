@@ -33,9 +33,9 @@ JVM按照存储内容的不同，将整个JVM内存分为5大类。
 
 ## 2:对象访问
 ### 1:使用句柄池
-
+![句柄池访问](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%E5%8F%A5%E6%9F%84%E6%B1%A0%E8%AE%BF%E9%97%AE.png)
 ### 2:直接引用
-
+![应用直接访问](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%E5%BA%94%E7%94%A8%E7%9B%B4%E6%8E%A5%E8%AE%BF%E9%97%AE.png)
 ### 3:二者比较
 * 使用句柄池，当GC移动对象时，并不需要修改引用，只需修改句柄池中的引用
 * 直接使用，1:访问快，2:节省了句柄池的空间
@@ -64,7 +64,7 @@ JVM按照存储内容的不同，将整个JVM内存分为5大类。
    ***缺点***:实现成本高，效率不及引用计数器
 
    **GC Roots对象的类型**:虚拟机栈中的变量、方法区中的静态变量、常量
-   
+   ![可达性分析](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90.png)
 
 ## 4:GC－垃圾回收算法
 ### 4.1:标记－清除法
@@ -73,6 +73,8 @@ JVM按照存储内容的不同，将整个JVM内存分为5大类。
   ***优点***:实现方便
   
   ***缺点***:产生大量的内存碎片
+  
+  ![标记－清除算法](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%E6%A0%87%E8%AE%B0%EF%BC%8D%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.png)
 
 ### 4.2:标记－整理法
 首先找出垃圾对象，然后将垃圾对象占用的内存释放，最后将存放的对象向内存的一边整体移动
@@ -80,6 +82,7 @@ JVM按照存储内容的不同，将整个JVM内存分为5大类。
 ***优点***:不会产生内存碎片，内存空间紧凑
 
 ***缺点***:移动对象成本高
+   ![标记－整理算法](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%E6%A0%87%E8%AE%B0%EF%BC%8D%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.png)
    
 ### 4.3:复制算法
    ```
@@ -93,6 +96,7 @@ JVM按照存储内容的不同，将整个JVM内存分为5大类。
   ***优点***:缓解了对象移动带来的损耗
   
   ***缺点***:内存使用率不高，会浪费一般的内存
+   ![复制算法](https://github.com/MrSummer33/blogs/blob/master/PICTURES/JVM%EF%BC%8D%E5%86%85%E5%AD%98%E8%87%AA%E5%8A%A8%E7%AE%A1%E7%90%86/%20%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png)
 
 ### 4.4:分代算法
   将堆按照对象的存活时间分为不同的区域，不同区域使用不同的垃圾回收器
