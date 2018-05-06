@@ -87,4 +87,5 @@
 ### 1:注册中心宕机,服务间能否正常通信？
 可以,消费端会缓存服务端的IP:PORT,注册中心宕机,只是不能更新已经缓存的IP集合。所以还是可以通信的。但此时如果客户端宕机,客户端感知不到。由此也可以看出,注册中心只是服务注册和发现的作用,并不会干预服务间的调用。
 
+#### [源码地址](https://github.com/MrSummer33/springcloud/tree/master/springcloud-eureka)
 #### [参考](https://blog.csdn.net/neosmith/article/details/53131023)
