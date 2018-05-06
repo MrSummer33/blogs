@@ -9,20 +9,20 @@
   ```
   
 ## 启动eureka服务
-* 1:添加eureka依赖包
-	![eureka依赖包](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/maven_dependency.png)
-* 2:声明为eureka注册中心服务
-	![启动类配置](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/EnableEurekaServerAnnotation.png)
-* 3:配置文件
-	![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/server-config.png)
-* 4:启动服务，访问http://localhost:18080/
-	![dashboard](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/dashboard.png)
+* 1:添加eureka依赖包<br/>
+![eureka依赖包](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/maven_dependency.png)
+* 2:声明为eureka注册中心服务<br/>
+![启动类配置](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/EnableEurekaServerAnnotation.png)
+* 3:配置文件<br/>
+![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/server-config.png)
+* 4:启动服务，访问http://localhost:18080/ <br/>
+![dashboard](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/dashboard.png)
 	
 ## 服务注册
- * 1:启动类声明为eureka客户端
- 		![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/client-main.png)
- * 2:配置注册中心地址
- 	 ![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/client-config.png)
+ * 1:启动类声明为eureka客户端<br/>
+ ![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/client-main.png)
+ * 2:配置注册中心地址<br/>
+ ![配置文件](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/client-config.png)
  	 
 ## 原理解析
 ### 1:eureka提供的EndPoint
@@ -55,7 +55,7 @@
 
 ### 6:注册中心集群
 注册中心集群会共享彼此的注册表，即使某服务没有明确注册在该注册中心下。从而保证了注册中心的高可用性。推荐服务明确注册到各个注册中心上。
-
+<br/>
 ![集群原理](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/EUREKA/集群原理.png)
 
 ### 7:自我保护策略
