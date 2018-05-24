@@ -6,3 +6,5 @@
 
 ## [SPRING-CLOUD](https://github.com/MrSummer33/blogs/tree/master/SPRING-CLOUD)
 [EUREKA](https://github.com/MrSummer33/blogs/blob/master/SPRING-CLOUD/EUREKA.md)
+</br>
+[ZUUL](https://github.com/MrSummer33/blogs/blob/master/SPRING-CLOUD/zuul.md)
