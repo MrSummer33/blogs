@@ -65,17 +65,17 @@ SendResponseFilter:包装response
 ![SendResponseFilter](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/SendResponseFilter.jpeg) 
 
 ### 3.4 过滤器间通信
-各个过滤器件不可直接通信,需通过改变***RequestContext***(粗略理解为当前请求)状态来通信。
+各个过滤器件不可直接通信,需通过改变 ***RequestContext*** (粗略理解为当前请求)状态来通信。
 </br>
-整个转发过程都是对***RequestContext***对象的操作。
+整个转发过程都是对 ***RequestContext*** 对象的操作。
 
 ## 4:流程
 ```
-	1:ZuulServlet拦截请求
-	2:PRE过滤器对请求进行包装
-	3:ROUTE过滤器转发请求到Origin,处理请求，得到response。
-	4:POST过滤器加工RESPONSE
-	5:Zuul返回Response給客户端
+1:ZuulServlet拦截请求
+2:PRE过滤器对请求进行包装
+3:ROUTE过滤器转发请求到Origin,处理请求，得到response。
+4:POST过滤器加工RESPONSE
+5:Zuul返回Response給客户端
 ```
 
 ## 5:总结
