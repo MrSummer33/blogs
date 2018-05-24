@@ -32,7 +32,7 @@ post:转发后
 * 请求统计
 
 ### 2.2 内部原理
-Zuul本身是一个***JavaWeb***服务。也是通过***Servlet***处理请求,只不过***Zuul***是做转发而不是真实处理。
+Zuul本身是一个 ***JavaWeb*** 服务。也是通过 ***Servlet*** 处理请求,只不过 ***Zuul*** 是做转发而不是真实处理。
 </br>
 ![ZuulServlet](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/ZuulServlet.jpeg) 
 </br>
@@ -46,10 +46,9 @@ Zuul网管服务器的核心就是过滤器
 PreDecorationFilter:负责计算路由服务器,确定转发地址
 
 ```
-	该过滤器是路由转发的核心，其根据路由转发配置ZuulProperties。计算当前路径转发的目标Origin。
+该过滤器是路由转发的核心，其根据路由转发配置ZuulProperties。计算当前路径转发的目标Origin。
 ```
-</br>
-![PreDecorationFilter](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/PreDecorationFilter.jpeg) 
+![PreDecorationFilter](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/PreDecorationFilter.jpeg)
 
 ### 3.2 ROUTE 过滤器
 RibbonRouteFilter:根据注册中心ServiceID转发请求,获取response
@@ -65,7 +64,7 @@ SendResponseFilter:包装response
 </br>
 ![SendResponseFilter](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/SendResponseFilter.jpeg) 
 
-### 3.4 过滤器见通信
+### 3.4 过滤器间通信
 各个过滤器件不可直接通信,需通过改变***RequestContext***(粗略理解为当前请求)状态来通信。
 </br>
 整个转发过程都是对***RequestContext***对象的操作。
