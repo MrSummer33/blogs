@@ -2,7 +2,7 @@
 ## 1:使用
 ### 1.1:Zuul 配置
 ![转发配置](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/route_config.jpeg)
-### 1.2:run 
+### 1.2:RUN
 ```
 访问网管服务端点 user/hello
 自动转发到 http://localhost:18090/hello
@@ -36,7 +36,7 @@ Zuul本身是一个 ***JavaWeb*** 服务。也是通过 ***Servlet*** 处理请�
 </br>
 ![ZuulServlet](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/ZuulServlet.jpeg) 
 </br>
-Netflix Zuul原声可不介入SpringMVC，但是SpringCloud默认继承了SpringMVC
+Netflix Zuul原生可不介入SpringMVC，但是SpringCloud默认集成了SpringMVC
 </br>
 ![ZuulServlet](https://github.com/MrSummer33/blogs/blob/master/PICTURES/SPRING-CLOUD/ZUUL/Dispatcher入口.jpeg) 
 
@@ -68,6 +68,8 @@ SendResponseFilter:包装response
 各个过滤器件不可直接通信,需通过改变 ***RequestContext*** (粗略理解为当前请求)状态来通信。
 </br>
 整个转发过程都是对 ***RequestContext*** 对象的操作。
+</br>
+几乎所有的Filter,都是对 ***RequestContext*** 对象进行加工。
 
 ## 4:流程
 ```
@@ -89,4 +91,5 @@ SendResponseFilter:包装response
 ### 5.2 要求
 ```
 1:高可用:作为唯一暴露的端口，必须承受得起高并发情况。
+2:压力分析:由于gateway作为统一的网管，需要保证包并发访问，所以其过滤器尽量不要处理比较耗时的任务。
 ```
