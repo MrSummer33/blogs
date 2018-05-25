@@ -93,3 +93,4 @@ SendResponseFilter:包装response
 1:高可用:作为唯一暴露的端口，必须承受得起高并发情况。
 2:压力分析:由于gateway作为统一的网管，需要保证包并发访问，所以其过滤器尽量不要处理比较耗时的任务。
 ```
+## 6 [对比Nginx](https://www.jianshu.com/p/058262447f57)
